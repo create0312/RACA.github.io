@@ -72,7 +72,7 @@ The final prediction is selected by a rule-constrained policy that favors clinic
 
 ## Interpretability
 
-![RACA interpretability](assets/raca_interpretability.png)
+![RACA interpretability](Images/Fig3.PNG)
 
 RACA is designed to expose how each decision is made. The paper analyzes whether diagnostic evidence aligns with guideline-based features, whether benign and malignant cases rely on clinically plausible cues, and whether evidence patterns remain stable across sampling ratios.
 
