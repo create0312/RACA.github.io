@@ -1,2 +1,2 @@
-# FG-RSSA
-Fine-Grained Contrastive Learning for Robotic Surgery Skill Assessment Through Joint Instrument-Tissue Modeling
+# RACA
+RACA: Rule-Aligned Collaborative Agents for Evidence-Grounded Breast Ultrasound Classification
