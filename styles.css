@@ -106,7 +106,7 @@ main {
 
 .hero {
   position: relative;
-  padding: 86px 0 58px;
+  padding: 64px 0 44px;
   text-align: center;
 }
 
@@ -149,17 +149,17 @@ h3 {
 }
 
 h1 {
-  max-width: 1040px;
-  margin: 20px auto 0;
-  font-size: clamp(2.4rem, 5.6vw, 5.35rem);
+  max-width: 920px;
+  margin: 18px auto 0;
+  font-size: clamp(1.9rem, 3.3vw, 3.35rem);
   font-weight: 700;
-  line-height: 1.03;
+  line-height: 1.15;
 }
 
 h2 {
-  font-size: clamp(2rem, 3.8vw, 3.25rem);
+  font-size: clamp(1.55rem, 2.7vw, 2.35rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.18;
 }
 
 h3 {
@@ -168,10 +168,10 @@ h3 {
 }
 
 .subtitle {
-  max-width: 810px;
-  margin: 26px auto 22px;
+  max-width: 760px;
+  margin: 20px auto 18px;
   color: #3f4c5f;
-  font-size: clamp(1.08rem, 1.8vw, 1.32rem);
+  font-size: clamp(1.02rem, 1.45vw, 1.18rem);
 }
 
 .authors,
@@ -195,7 +195,7 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin-top: 30px;
+  margin-top: 24px;
 }
 
 .button {
@@ -231,7 +231,7 @@ h3 {
 }
 
 .showcase {
-  padding: 8px 0 64px;
+  padding: 4px 0 58px;
 }
 
 .paper-figure {
@@ -303,7 +303,7 @@ figcaption {
 }
 
 .section {
-  padding: 82px 0;
+  padding: 72px 0;
   border-top: 1px solid rgba(230, 224, 214, 0.86);
 }
 
@@ -344,7 +344,7 @@ figcaption {
 
 .highlight-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 14px;
 }
 
@@ -357,7 +357,7 @@ figcaption {
 }
 
 .highlight-grid article {
-  min-height: 232px;
+  min-height: 218px;
   padding: 24px;
 }
 
@@ -579,7 +579,7 @@ code {
   }
 
   .hero {
-    padding: 54px 0 42px;
+    padding: 44px 0 36px;
   }
 
   .highlight-grid,
@@ -602,11 +602,11 @@ code {
   }
 
   h1 {
-    font-size: 2.28rem;
+    font-size: 1.95rem;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.65rem;
   }
 
   figcaption {
