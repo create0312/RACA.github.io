@@ -17,7 +17,7 @@ Lingyu Chen<sup>*</sup>, Yue Wang<sup>*</sup>, Cheng Li, Lin Jin, Daoqiang Zhang
 
 </div>
 
-![RACA framework](assets/raca_framework.png)
+![RACA framework](ImagesFig1.png)
 
 ## News
 
