@@ -18,7 +18,9 @@ Lingyu Chen<sup>&#42;</sup>, Yue Wang<sup>&#42;</sup>, Cheng Li, Lin Jin, Daoqia
 </div>
 
 ![RACA framework](Images/Fig1.PNG)
-
+<p align="center">
+<b>Fig. 1.</b> Overview of the proposed RACA. (a) Lesion ROI is localized using a combination of existing detection and segmentation tools. (b-d) In Stage I, three perception agents extract and consolidate morphological and semantic evidence into structured diagnostic evidence. (e) In Stage II, diagnostic evidence is evaluated to derive a continuous malignancy risk estimate and an initial prediction via a rule-aligned risk modeling agent. (f) In Stage III, a critic-guided decision calibration agent further refines the prediction through prior-case retrieval.
+</p>
 
 ## Highlights
 
