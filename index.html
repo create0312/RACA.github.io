@@ -12,15 +12,15 @@
   </head>
   <body>
     <header class="site-header">
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary navigation">
         <a class="brand" href="#top" aria-label="RACA home">
-          <span class="brand-mark">R</span>
-          <span>RACA</span>
+          <span class="brand-mark">RACA</span>
         </a>
-        <div class="nav-links" aria-label="Page navigation">
+        <div class="nav-links">
           <a href="#abstract">Abstract</a>
           <a href="#method">Method</a>
           <a href="#results">Results</a>
+          <a href="#interpretability">Interpretability</a>
           <a href="#citation">Citation</a>
         </div>
       </nav>
@@ -28,45 +28,30 @@
 
     <main id="top">
       <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">MICCAI 2026 Manuscript</p>
-          <h1>RACA: Rule-Aligned Collaborative Agents for Evidence-Grounded Breast Ultrasound Classification</h1>
-          <p class="subtitle">
-            A rule-aligned multi-agent framework for transparent, traceable, and clinically grounded breast ultrasound diagnosis.
-          </p>
-          <p class="authors">
-            Lingyu Chen<sup>&#42;</sup>, Yue Wang<sup>&#42;</sup>, Cheng Li, Lin Jin,
-            Daoqiang Zhang, Hongen Liao, Fang Chen<sup>&dagger;</sup>, Qingjie Meng<sup>&dagger;</sup>
-          </p>
-          <p class="author-note">
-            <sup>&#42;</sup> Equal contribution &nbsp;&nbsp; <sup>&dagger;</sup> Co-corresponding authors
-          </p>
-          <div class="hero-actions" aria-label="Project links">
-            <a class="button primary" href="#citation">Paper</a>
-            <a class="button" href="#method">Method</a>
-            <a class="button" href="#results">Results</a>
-            <a class="button muted" href="#release">Code coming soon</a>
-          </div>
-        </div>
+        <p class="venue">MICCAI 2026 Manuscript</p>
+        <h1>RACA: Rule-Aligned Collaborative Agents for Evidence-Grounded Breast Ultrasound Classification</h1>
+        <p class="subtitle">
+          A rule-aligned multi-agent framework for transparent, traceable, and clinically grounded breast ultrasound diagnosis.
+        </p>
 
-        <aside class="metric-panel" aria-label="Key results">
-          <div>
-            <span class="metric-value">0.8235</span>
-            <span class="metric-label">Best ACC on BUV</span>
-          </div>
-          <div>
-            <span class="metric-value">3</span>
-            <span class="metric-label">BUS benchmarks</span>
-          </div>
-          <div>
-            <span class="metric-value">31.40s</span>
-            <span class="metric-label">Runtime per image</span>
-          </div>
-        </aside>
+        <p class="authors">
+          Lingyu Chen<sup>&#42;</sup>, Yue Wang<sup>&#42;</sup>, Cheng Li, Lin Jin,
+          Daoqiang Zhang, Hongen Liao, Fang Chen<sup>&dagger;</sup>, Qingjie Meng<sup>&dagger;</sup>
+        </p>
+        <p class="author-note">
+          <sup>&#42;</sup> Equal contribution &nbsp;&nbsp; <sup>&dagger;</sup> Co-corresponding authors
+        </p>
+
+        <div class="hero-actions" aria-label="Project links">
+          <a class="button primary" href="#citation">Paper</a>
+          <a class="button" href="#method">Method</a>
+          <a class="button" href="#results">Results</a>
+          <a class="button subdued" href="#release">Code coming soon</a>
+        </div>
       </section>
 
-      <section class="figure-section">
-        <figure class="paper-figure wide">
+      <section class="showcase" aria-label="Framework overview">
+        <figure class="paper-figure hero-figure">
           <img src="Images/Fig1.PNG" alt="Overview of the RACA framework">
           <figcaption>
             <strong>Fig. 1.</strong> Overview of the proposed RACA. (a) Lesion ROI is localized using a combination of existing
@@ -76,56 +61,80 @@
             (f) In Stage III, a critic-guided decision calibration agent further refines the prediction through prior-case retrieval.
           </figcaption>
         </figure>
+
+        <div class="stat-strip" aria-label="Key results">
+          <div>
+            <span>0.8088</span>
+            <p>BUSI ACC</p>
+          </div>
+          <div>
+            <span>0.8235</span>
+            <p>BUV ACC</p>
+          </div>
+          <div>
+            <span>0.8085</span>
+            <p>BUSBRA ACC</p>
+          </div>
+          <div>
+            <span>31.40s</span>
+            <p>Runtime / image</p>
+          </div>
+        </div>
       </section>
 
-      <section class="section two-column" id="abstract">
-        <div>
-          <p class="eyebrow">Why RACA</p>
-          <h2>Clinical rules should be part of the decision pathway, not an afterthought.</h2>
+      <section class="section split" id="abstract">
+        <div class="section-kicker">
+          <p class="eyebrow">Abstract</p>
+          <h2>Clinical rules should be visible in the decision pathway.</h2>
         </div>
         <div class="prose">
           <p>
             Breast cancer is highly prevalent worldwide. While breast ultrasound (BUS) serves as a primary screening modality,
-            reliable diagnostic interpretation remains inherently challenging.
+            its reliable diagnostic interpretation remains inherently challenging.
           </p>
           <p>
             Most existing BUS classification methods prioritize direct image-to-label mapping and overall accuracy,
-            <strong>neglecting the alignment with clinical diagnostic rules and decision traceability</strong>. To address these
-            challenges, we introduce <strong>RACA, a Rule-Aligned Collaborative Agent framework for evidence-grounded BUS
-            classification</strong>.
+            <strong>neglecting the alignment with clinical diagnostic rules and decision traceability</strong>. Such limitations
+            hinder their integration into rule-governed clinical workflows and diminish the trustworthiness of automated
+            diagnostic decisions.
           </p>
           <p>
-            RACA introduces <strong>a novel, three-stage framework driven by explicit clinical rules</strong>. It consolidates
-            morphological and semantic evidence into <strong>structured diagnostic evidence</strong>, derives
-            <strong>a rule-aligned risk estimate</strong>, and refines predictions through
-            <strong>critic-guided calibration with memory-based retrieval</strong>.
+            To address these challenges, we introduce <strong>RACA, a Rule-Aligned Collaborative Agent framework for
+            evidence-grounded BUS classification</strong>. RACA introduces <strong>a novel, three-stage framework driven by
+            explicit clinical rules</strong>: structured diagnostic evidence construction, rule-aligned risk estimation, and
+            critic-guided calibration through memory-based retrieval.
+          </p>
+          <p>
+            Extensive experiments on three BUS benchmarks <strong>demonstrate the superiority of RACA over representative
+            classification and medical agent-based frameworks</strong>. Comprehensive interpretability analyses and case
+            demonstrations <strong>validate that its traceable decision pathway aligns with clinical diagnosis</strong>.
           </p>
         </div>
       </section>
 
       <section class="section" id="highlights">
-        <div class="section-heading">
+        <div class="section-title">
           <p class="eyebrow">Highlights</p>
-          <h2>What the framework contributes</h2>
+          <h2>Designed for evidence-grounded diagnosis</h2>
         </div>
         <div class="highlight-grid">
-          <article class="highlight-card">
-            <span class="card-index">01</span>
+          <article>
+            <span>01</span>
             <h3>Rule-Aligned Diagnosis</h3>
             <p>RACA anchors BUS classification to clinical descriptors such as shape, margin, echogenicity, and posterior features.</p>
           </article>
-          <article class="highlight-card">
-            <span class="card-index">02</span>
+          <article>
+            <span>02</span>
             <h3>Collaborative Agents</h3>
             <p>The diagnostic process is decomposed into evidence-grounded perception, risk modeling, and decision calibration.</p>
           </article>
-          <article class="highlight-card">
-            <span class="card-index">03</span>
-            <h3>Traceable Evidence</h3>
+          <article>
+            <span>03</span>
+            <h3>Traceable Evidence Chain</h3>
             <p>Each prediction is supported by auditable evidence, consistency checks, malignancy risk estimates, and retrieval signals.</p>
           </article>
-          <article class="highlight-card">
-            <span class="card-index">04</span>
+          <article>
+            <span>04</span>
             <h3>Memory-Guided Calibration</h3>
             <p>A critic agent retrieves similar prior cases and selectively refines uncertain predictions under reliability constraints.</p>
           </article>
@@ -133,31 +142,30 @@
       </section>
 
       <section class="section" id="method">
-        <div class="section-heading compact">
+        <div class="section-title narrow">
           <p class="eyebrow">Method Overview</p>
-          <h2>Three stages, one traceable diagnostic route</h2>
+          <h2>A three-stage agent workflow with auditable intermediate states</h2>
         </div>
-
-        <div class="method-timeline">
-          <article class="method-step">
-            <span class="step-number">Stage I</span>
+        <div class="method-flow" aria-label="RACA method stages">
+          <article>
+            <p class="stage">Stage I</p>
             <h3>Evidence-Grounded Perception</h3>
             <p>
               The lesion ROI is converted into structured diagnostic evidence through morphological measurement,
               semantic interpretation, and auditable attribute-level fusion.
             </p>
-            <p class="code-line">D = {shape, margin, echogenicity, posterior}</p>
+            <code>D = {shape, margin, echogenicity, posterior}</code>
           </article>
-          <article class="method-step">
-            <span class="step-number">Stage II</span>
+          <article>
+            <p class="stage">Stage II</p>
             <h3>Rule-Aligned Risk Modeling</h3>
             <p>
               Fused diagnostic evidence is mapped into a continuous malignancy risk estimate under explicit clinical
               weighting, consistency penalties, and evidence instability control.
             </p>
           </article>
-          <article class="method-step">
-            <span class="step-number">Stage III</span>
+          <article>
+            <p class="stage">Stage III</p>
             <h3>Critic-Guided Decision Calibration</h3>
             <p>
               A memory-based critic retrieves prior decision states and admits calibration only when neighborhood
@@ -167,10 +175,10 @@
         </div>
       </section>
 
-      <section class="section two-column" id="implementation">
-        <div>
+      <section class="section split" id="implementation">
+        <div class="section-kicker">
           <p class="eyebrow">Datasets and Implementation</p>
-          <h2>Fair comparison under explicit data controls</h2>
+          <h2>Fair comparison under explicit data controls.</h2>
         </div>
         <div class="prose">
           <p>
@@ -192,9 +200,182 @@
       </section>
 
       <section class="section" id="results">
-        <div class="section-heading">
+        <div class="section-title">
           <p class="eyebrow">Results</p>
           <h2>Quantitative comparison across three BUS benchmarks</h2>
         </div>
 
-        <div class="table-shell">
+        <div class="table-wrap">
+          <table class="paper-table">
+            <caption>Table 1. Quantitative comparison on BUSI, BUV, and BUSBRA datasets.</caption>
+            <thead>
+              <tr>
+                <th rowspan="2">Category</th>
+                <th rowspan="2">Method</th>
+                <th colspan="4">BUSI</th>
+                <th colspan="4">BUV</th>
+                <th colspan="4">BUSBRA</th>
+              </tr>
+              <tr>
+                <th>ACC</th><th>PRE</th><th>REC</th><th>F1</th>
+                <th>ACC</th><th>PRE</th><th>REC</th><th>F1</th>
+                <th>ACC</th><th>PRE</th><th>REC</th><th>F1</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fully-supervised</td><td>LKA [32]</td>
+                <td>0.7353</td><td>0.6765</td><td>0.7667</td><td>0.7188</td>
+                <td>0.7647</td><td>0.7500</td><td>0.5000</td><td>0.6000</td>
+                <td>0.7979</td><td>0.7447</td><td>0.5738</td><td>0.6481</td>
+              </tr>
+              <tr>
+                <td>Fully-supervised</td><td>DiffMICv2 [30]</td>
+                <td>0.7500</td><td>0.7485</td><td>0.7518</td><td>0.7486</td>
+                <td>0.7647</td><td>0.7596</td><td>0.7045</td><td>0.7167</td>
+                <td>0.7606</td><td>0.7419</td><td>0.6780</td><td><strong>0.6915</strong></td>
+              </tr>
+              <tr>
+                <td>Semi-supervised</td><td>OPENSSC [7]</td>
+                <td>0.7206</td><td>0.7540</td><td>0.7395</td><td>0.7191</td>
+                <td>0.7059</td><td><strong>0.8438</strong></td><td>0.5833</td><td>0.5503</td>
+                <td>0.7394</td><td>0.7188</td><td>0.6410</td><td>0.6500</td>
+              </tr>
+              <tr>
+                <td>Semi-supervised</td><td>PEAT [31]</td>
+                <td>0.6765</td><td>0.7381</td><td>0.6404</td><td>0.6211</td>
+                <td>0.6471</td><td>0.3235</td><td>0.5000</td><td>0.3929</td>
+                <td>0.7447</td><td><strong>0.7512</strong></td><td>0.6321</td><td>0.6382</td>
+              </tr>
+              <tr>
+                <td>Medical agent-based</td><td>Medagents [27]</td>
+                <td>0.6119</td><td>0.6423</td><td>0.6297</td><td>0.6077</td>
+                <td>0.5294</td><td>0.5208</td><td>0.5227</td><td>0.5143</td>
+                <td>0.5260</td><td>0.5271</td><td>0.5312</td><td>0.5103</td>
+              </tr>
+              <tr>
+                <td>Medical agent-based</td><td>MDAgents [12]</td>
+                <td>0.5588</td><td>0.5000</td><td><strong>0.8000</strong></td><td>0.6154</td>
+                <td>0.7059</td><td>0.6000</td><td>0.5000</td><td>0.5455</td>
+                <td>0.6330</td><td>0.4524</td><td>0.6230</td><td>0.5241</td>
+              </tr>
+              <tr class="ours">
+                <td><strong>Ours</strong></td><td><strong>RACA</strong></td>
+                <td><strong>0.8088</strong></td><td><strong>0.7742</strong></td><td><strong>0.8000</strong></td><td><strong>0.7869</strong></td>
+                <td><strong>0.8235</strong></td><td>0.7143</td><td><strong>0.8333</strong></td><td><strong>0.7692</strong></td>
+                <td><strong>0.8085</strong></td><td>0.7273</td><td>0.6557</td><td>0.6897</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap">
+          <table class="paper-table ablation-table">
+            <caption>
+              Table 2. Ablation study on BUSI and BUSBRA datasets. EGP denotes evidence-grounded perception,
+              A<sub>risk</sub> denotes the rule-aligned risk modeling agent, and A<sub>k-top</sub>, A<sub>k-thre</sub>,
+              and A<sub>k-plug</sub> denote calibration agents.
+            </caption>
+            <thead>
+              <tr>
+                <th rowspan="2">EGP</th>
+                <th rowspan="2">A<sub>risk</sub></th>
+                <th rowspan="2">A<sub>k-top</sub></th>
+                <th rowspan="2">A<sub>k-thre</sub></th>
+                <th rowspan="2">A<sub>k-plug</sub></th>
+                <th colspan="4">BUSI</th>
+                <th colspan="4">BUSBRA</th>
+              </tr>
+              <tr>
+                <th>ACC</th><th>PRE</th><th>REC</th><th>F1</th>
+                <th>ACC</th><th>PRE</th><th>REC</th><th>F1</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Yes</td><td>Yes</td><td></td><td></td><td></td>
+                <td>0.6176</td><td>0.5909</td><td>0.4333</td><td>0.5000</td>
+                <td>0.5212</td><td>0.3164</td><td>0.4098</td><td>0.3571</td>
+              </tr>
+              <tr>
+                <td>Yes</td><td>Yes</td><td>Yes</td><td></td><td></td>
+                <td>0.7054</td><td>0.6744</td><td>0.6042</td><td>0.6374</td>
+                <td>0.6223</td><td>0.4151</td><td>0.3607</td><td>0.3860</td>
+              </tr>
+              <tr>
+                <td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td>
+                <td>0.7941</td><td>0.7667</td><td>0.7667</td><td>0.7667</td>
+                <td>0.7713</td><td><strong>0.7647</strong></td><td>0.4262</td><td>0.5474</td>
+              </tr>
+              <tr class="ours">
+                <td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td>
+                <td><strong>0.8088</strong></td><td><strong>0.7742</strong></td><td><strong>0.8000</strong></td><td><strong>0.7869</strong></td>
+                <td><strong>0.8085</strong></td><td>0.7273</td><td><strong>0.6557</strong></td><td><strong>0.6897</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="interpretability">
+        <div class="section-title narrow">
+          <p class="eyebrow">Interpretability</p>
+          <h2>Traceable evidence, stable rules, and case-level verification</h2>
+        </div>
+
+        <figure class="paper-figure">
+          <img src="Images/Fig3.PNG" alt="Interpretability analysis of RACA">
+          <figcaption>
+            <strong>Fig. 2.</strong> Comprehensive analysis of RACA across consistency, discrimination, and hierarchical representation.
+            The analysis shows alignment between guideline-based evidence and structured evidence, evidence contribution differences
+            between benign and malignant cases, stable evidence patterns under different sampling ratios, and a hierarchical layout
+            of diagnostic evidence components.
+          </figcaption>
+        </figure>
+
+        <figure class="paper-figure">
+          <img src="Images/Fig2.PNG" alt="Traceable rule-aligned inference process of RACA">
+          <figcaption>
+            <strong>Fig. 3.</strong> A traceable rule-aligned inference example. RACA exposes morphological evidence, semantic evidence,
+            fused risk contributions, and final decision gates, making the diagnostic pathway auditable at each stage.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section split" id="release">
+        <div class="section-kicker">
+          <p class="eyebrow">Release Plan</p>
+          <h2>Repository assets to be released.</h2>
+        </div>
+        <ul class="release-list">
+          <li>Inference code</li>
+          <li>Data split and preprocessing scripts</li>
+          <li>Memory bank construction</li>
+          <li>Training and validation configuration</li>
+          <li>Model checkpoints</li>
+          <li>Demo examples</li>
+        </ul>
+      </section>
+
+      <section class="section" id="citation">
+        <div class="section-title narrow">
+          <p class="eyebrow">Citation</p>
+          <h2>Cite RACA</h2>
+        </div>
+        <pre class="bibtex"><code>@misc{chen2026raca,
+  title  = {RACA: Rule-Aligned Collaborative Agents for Evidence-Grounded Breast Ultrasound Classification},
+  author = {Chen, Lingyu and Wang, Yue and Li, Cheng and Jin, Lin and Zhang, Daoqiang and Liao, Hongen and Chen, Fang and Meng, Qingjie},
+  year   = {2026},
+  note   = {Manuscript}
+}</code></pre>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        This project is intended for research use only. RACA is not a certified medical device and should not be used
+        for clinical diagnosis without appropriate validation, regulatory review, and expert supervision.
+      </p>
+    </footer>
+  </body>
+</html>
