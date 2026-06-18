@@ -9,9 +9,9 @@
 [![Method](https://img.shields.io/badge/Method-Collaborative%20Agents-6a4c93)](#method-overview)
 [![Code](https://img.shields.io/badge/Code-coming%20soon-lightgrey)](#release-plan)
 
-Lingyu Chen<sup>*</sup>, Yue Wqang<sup>*</sup>, Cheng Li, Lin Jin, Daoqiang Zhang, Hongen Liao, Fang Chen<sup>&dagger;</sup>, Qingjie Meng<sup>&dagger;</sup>
+Lingyu Chen<sup>&#42;</sup>, Yue Wang<sup>&#42;</sup>, Cheng Li, Lin Jin, Daoqiang Zhang, Hongen Liao, Fang Chen<sup>&dagger;</sup>, Qingjie Meng<sup>&dagger;</sup>
 
-<sup>*</sup> Equal contribution &nbsp;&nbsp; <sup>&dagger;</sup> Co-corresponding authors
+<sup>&#42;</sup> Equal contribution &nbsp;&nbsp; <sup>&dagger;</sup> Co-corresponding authors
 
 [Paper](#citation) | [Method](#method-overview) | [Results](#results) | [Citation](#citation)
 
