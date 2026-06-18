@@ -17,11 +17,8 @@ Lingyu Chen<sup>*</sup>, Yue Wang<sup>*</sup>, Cheng Li, Lin Jin, Daoqiang Zhang
 
 </div>
 
-![RACA framework](ImagesFig1.png)
+![RACA framework](Images/Fig1.png)
 
-## News
-
-- **2026-06-18**: Initial project README prepared for RACA. Code, model checkpoints, and reproducibility scripts will be organized in this repository.
 
 ## Highlights
 
