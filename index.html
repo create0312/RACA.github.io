@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RACA | Rule-Aligned Collaborative Agents</title>
+    <meta
+      name="description"
+      content="RACA: Rule-Aligned Collaborative Agents for Evidence-Grounded Breast Ultrasound Classification."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a class="brand" href="#top" aria-label="RACA home">
+          <span class="brand-mark">R</span>
+          <span>RACA</span>
+        </a>
+        <div class="nav-links" aria-label="Page navigation">
+          <a href="#abstract">Abstract</a>
+          <a href="#method">Method</a>
+          <a href="#results">Results</a>
+          <a href="#citation">Citation</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">MICCAI 2026 Manuscript</p>
+          <h1>RACA: Rule-Aligned Collaborative Agents for Evidence-Grounded Breast Ultrasound Classification</h1>
+          <p class="subtitle">
+            A rule-aligned multi-agent framework for transparent, traceable, and clinically grounded breast ultrasound diagnosis.
+          </p>
+          <p class="authors">
+            Lingyu Chen<sup>&#42;</sup>, Yue Wang<sup>&#42;</sup>, Cheng Li, Lin Jin,
+            Daoqiang Zhang, Hongen Liao, Fang Chen<sup>&dagger;</sup>, Qingjie Meng<sup>&dagger;</sup>
+          </p>
+          <p class="author-note">
+            <sup>&#42;</sup> Equal contribution &nbsp;&nbsp; <sup>&dagger;</sup> Co-corresponding authors
+          </p>
+          <div class="hero-actions" aria-label="Project links">
+            <a class="button primary" href="#citation">Paper</a>
+            <a class="button" href="#method">Method</a>
+            <a class="button" href="#results">Results</a>
+            <a class="button muted" href="#release">Code coming soon</a>
+          </div>
+        </div>
+
+        <aside class="metric-panel" aria-label="Key results">
+          <div>
+            <span class="metric-value">0.8235</span>
+            <span class="metric-label">Best ACC on BUV</span>
+          </div>
+          <div>
+            <span class="metric-value">3</span>
+            <span class="metric-label">BUS benchmarks</span>
+          </div>
+          <div>
+            <span class="metric-value">31.40s</span>
+            <span class="metric-label">Runtime per image</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="figure-section">
+        <figure class="paper-figure wide">
+          <img src="Images/Fig1.PNG" alt="Overview of the RACA framework">
+          <figcaption>
+            <strong>Fig. 1.</strong> Overview of the proposed RACA. (a) Lesion ROI is localized using a combination of existing
+            detection and segmentation tools. (b-d) In Stage I, three perception agents extract and consolidate morphological
+            and semantic evidence into structured diagnostic evidence. (e) In Stage II, diagnostic evidence is evaluated to
+            derive a continuous malignancy risk estimate and an initial prediction via a rule-aligned risk modeling agent.
+            (f) In Stage III, a critic-guided decision calibration agent further refines the prediction through prior-case retrieval.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section two-column" id="abstract">
+        <div>
+          <p class="eyebrow">Why RACA</p>
+          <h2>Clinical rules should be part of the decision pathway, not an afterthought.</h2>
+        </div>
+        <div class="prose">
+          <p>
+            Breast cancer is highly prevalent worldwide. While breast ultrasound (BUS) serves as a primary screening modality,
+            reliable diagnostic interpretation remains inherently challenging.
+          </p>
+          <p>
+            Most existing BUS classification methods prioritize direct image-to-label mapping and overall accuracy,
+            <strong>neglecting the alignment with clinical diagnostic rules and decision traceability</strong>. To address these
+            challenges, we introduce <strong>RACA, a Rule-Aligned Collaborative Agent framework for evidence-grounded BUS
+            classification</strong>.
+          </p>
+          <p>
+            RACA introduces <strong>a novel, three-stage framework driven by explicit clinical rules</strong>. It consolidates
+            morphological and semantic evidence into <strong>structured diagnostic evidence</strong>, derives
+            <strong>a rule-aligned risk estimate</strong>, and refines predictions through
+            <strong>critic-guided calibration with memory-based retrieval</strong>.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="highlights">
+        <div class="section-heading">
+          <p class="eyebrow">Highlights</p>
+          <h2>What the framework contributes</h2>
+        </div>
+        <div class="highlight-grid">
+          <article class="highlight-card">
+            <span class="card-index">01</span>
+            <h3>Rule-Aligned Diagnosis</h3>
+            <p>RACA anchors BUS classification to clinical descriptors such as shape, margin, echogenicity, and posterior features.</p>
+          </article>
+          <article class="highlight-card">
+            <span class="card-index">02</span>
+            <h3>Collaborative Agents</h3>
+            <p>The diagnostic process is decomposed into evidence-grounded perception, risk modeling, and decision calibration.</p>
+          </article>
+          <article class="highlight-card">
+            <span class="card-index">03</span>
+            <h3>Traceable Evidence</h3>
+            <p>Each prediction is supported by auditable evidence, consistency checks, malignancy risk estimates, and retrieval signals.</p>
+          </article>
+          <article class="highlight-card">
+            <span class="card-index">04</span>
+            <h3>Memory-Guided Calibration</h3>
+            <p>A critic agent retrieves similar prior cases and selectively refines uncertain predictions under reliability constraints.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="method">
+        <div class="section-heading compact">
+          <p class="eyebrow">Method Overview</p>
+          <h2>Three stages, one traceable diagnostic route</h2>
+        </div>
+
+        <div class="method-timeline">
+          <article class="method-step">
+            <span class="step-number">Stage I</span>
+            <h3>Evidence-Grounded Perception</h3>
+            <p>
+              The lesion ROI is converted into structured diagnostic evidence through morphological measurement,
+              semantic interpretation, and auditable attribute-level fusion.
+            </p>
+            <p class="code-line">D = {shape, margin, echogenicity, posterior}</p>
+          </article>
+          <article class="method-step">
+            <span class="step-number">Stage II</span>
+            <h3>Rule-Aligned Risk Modeling</h3>
+            <p>
+              Fused diagnostic evidence is mapped into a continuous malignancy risk estimate under explicit clinical
+              weighting, consistency penalties, and evidence instability control.
+            </p>
+          </article>
+          <article class="method-step">
+            <span class="step-number">Stage III</span>
+            <h3>Critic-Guided Decision Calibration</h3>
+            <p>
+              A memory-based critic retrieves prior decision states and admits calibration only when neighborhood
+              reliability supports a rule-consistent update.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section two-column" id="implementation">
+        <div>
+          <p class="eyebrow">Datasets and Implementation</p>
+          <h2>Fair comparison under explicit data controls</h2>
+        </div>
+        <div class="prose">
+          <p>
+            We conduct experiments on three publicly available BUS datasets: <strong>BUSI</strong>, <strong>BUV</strong>,
+            and <strong>BUSBRA</strong>. We use <strong>Auto-GPT</strong> to build our agent framework.
+          </p>
+          <p>
+            The calibration <strong>A<sub>k-plug</sub> employs an EfficientNet pretrained on BUSC</strong>, which is independent
+            of the target datasets, <strong>ensuring no data leakage</strong>. Each dataset is randomly divided into training,
+            validation, and test sets with a <strong>7:2:1 ratio</strong>.
+          </p>
+          <p>
+            RACA uses the validation split exclusively for <strong>hyperparameter selection and memory construction</strong>,
+            while all baselines adopt <strong>identical data splits for fair comparison</strong>. Runtime is
+            <strong>31.40 s/image on one RTX 4090 24GB GPU</strong>, with most latency from the
+            <strong>VLM component (31.38 s/image)</strong>.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="results">
+        <div class="section-heading">
+          <p class="eyebrow">Results</p>
+          <h2>Quantitative comparison across three BUS benchmarks</h2>
+        </div>
+
+        <div class="table-shell">
